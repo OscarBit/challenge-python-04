@@ -1,21 +1,12 @@
 def div(func):
-    def wrapper(*args, **kwargs):
-        text = func(*args, **kwargs)
-        return f'<div>{text}</div>'
-    return wrapper
+    return lambda *args, **kwargs : f'<div>{func(*args, **kwargs)}</div>'
 
 def article(func):
-    def wrapper(*args, **kwargs):
-        text = func(*args, **kwargs)
-        return f'<article>{text}</article>'
-    return wrapper
+    return lambda *args, **kwargs : f'<article>{func(*args, **kwargs)}</article>'
 
 
 def p(func):
-    def wrapper(*args, **kwargs):
-        text = func(*args, **kwargs)
-        return f'<p>{text}</p>'
-    return wrapper
+    return lambda *args, **kwargs : f'<p>{func(*args, **kwargs)}</p>'
 
 
 # Here you must apply the decorators, uncomment this later
